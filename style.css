@@ -1,0 +1,122 @@
+/* ------ CSS - UI Animation - Fire ------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+:root {
+  --color-text: #f1f5f8;
+  --color-orange: #ffa500;
+  --color-yellow: #ffff00;
+  --color-black: #222;
+  --fontfamily-primary: "Roboto", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+html {
+  scroll-behavior: smooth;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--color-black);
+  color: var(--color-text);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  overflow: hidden;
+}
+h1 {
+  filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.6));
+  font-family: var(--fontfamily-primary);
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  text-align: center;
+  position: absolute;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 3rem;
+  z-index: -10;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+.buttons {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+}
+#canvas1 {
+  background: var(--color-primary-1);
+  filter: blur(15px) contrast(3);
+  position: absolute;
+  z-index: -11;
+}
+.button {
+  font-family: var(--fontfamily-primary);
+  border: 5px solid var(--color-text);
+  color: var(--color-text);
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  width: 25%;
+  height: 120px;
+  margin: 10px;
+  transition: 0.25s;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 110px;
+  min-width: 300px;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 45px;
+  transition: 0.25s;
+}
+button:nth-child(1)::before {
+  content: "HOME";
+}
+button:nth-child(2)::before {
+  content: "SHOP";
+}
+button:nth-child(3)::before {
+  content: "ABOUT";
+}
+.button:hover::before {
+  color: var(--color-orange);
+  box-shadow: inset 6px 6px 10px var(--color-yellow),
+    inset -6px -6px 10px var(--color-yellow),
+    inset -6px 6px 10px var(--color-yellow),
+    inset 6px -6px 10px var(--color-yellow);
+  background: var(--color-orange);
+  text-shadow: 5px 5px 5px var(--color-yellow),
+    -5px -5px 5px var(--color-yellow), -5px 5px 5px var(--color-yellow),
+    5px -5px 5px var(--color-yellow);
+}
+.button:hover {
+  color: var(--color-yellow);
+  box-shadow: 6px 6px 10px var(--color-yellow),
+    -6px -6px 10px var(--color-yellow), -6px 6px 10px var(--color-yellow),
+    6px -6px 10px var(--color-yellow);
+  border: 5px solid var(--color-yellow);
+  background: var(--color-yellow);
+}
